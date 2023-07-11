@@ -6,10 +6,9 @@ import path from "path";
 import fs from "fs";
 import https from "https";
 import session from "express-session";
-import db from "./src/config/database.js";
 import dotenv from "dotenv";
+import routes from "./src/routes/index.js";
 dotenv.config();
-import router from "./src/routes/index.js";
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,7 +22,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use(router);
+app.use(routes);
 
 app.listen(
   `${process.env.SERVER_PORT}`,

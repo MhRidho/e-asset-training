@@ -1,0 +1,6 @@
+FIFO -> First In First Out
+LIFO -> Last In First Out
+
+- Develop Fitur PERSEDIAAN
+- Migrasi data ke e-asset
+

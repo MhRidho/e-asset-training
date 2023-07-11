@@ -1,17 +1,12 @@
 import express from "express";
-import {
-  getAsset,
-  createAsset,
-  getAssetById,
-  editAsset,
-  deleteAsset,
-} from "../controllers/asset.js";
-const router = express();
+const router = express.Router();
 
-router.get("/asset", getAsset);
-router.get("/asset/:id", getAssetById);
-router.post("/asset", createAsset);
-router.patch("/asset/:kode_asset", editAsset);
-router.delete("/asset/:kode_asset", deleteAsset);
+// pemanggilan fungsi
+import assetRoutes from "./asset/index.js";
+import pemanfaatanRoutes from "./pemanfaatan/index.js";
+
+// Routing
+router.use("/asset", assetRoutes);
+router.use("/pemanfaatan", pemanfaatanRoutes);
 
 export default router;
